@@ -15,31 +15,13 @@
  */
 package io.gravitee.identityprovider.api;
 
-
-import io.gravitee.common.service.AbstractService;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
- * @author Jeoffrey HAEYAERT (jeoffrey.haeyaert at graviteesource.com)
+ * @author Lorie Pisicchio (lorie.pisicchio at graviteesource.com)
  * @author GraviteeSource Team
  */
-public class DefaultIdentityProviderManager extends AbstractService<IdentityProviderManager> implements IdentityProviderManager {
+public interface IdentityProviderConfiguration {
 
-    private final Map<String, IdentityProvider> identityProviders = new HashMap<>();
-
-    public IdentityProvider get(String id) {
-
-        return identityProviders.get(id);
-    }
-
-    public void put(String id, IdentityProvider identityProvider) {
-
-        identityProviders.put(id, identityProvider);
-    }
-
-    @Override
-    public Map<String, IdentityProvider> getAll() {
-        return identityProviders;
+    default boolean userProvider() {
+        return false;
     }
 }
