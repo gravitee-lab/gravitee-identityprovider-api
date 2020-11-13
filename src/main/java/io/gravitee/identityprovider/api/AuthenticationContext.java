@@ -15,8 +15,6 @@
  */
 package io.gravitee.identityprovider.api;
 
-import io.gravitee.gateway.api.Request;
-
 import java.util.Map;
 
 /**
@@ -24,11 +22,6 @@ import java.util.Map;
  * @author GraviteeSource Team
  */
 public interface AuthenticationContext {
-
-    /**
-     * An optional {@link Request} that can be attached when running inside a gravitee "gateway".
-     */
-    Request request();
 
     /**
      * Stores an attribute in this context.

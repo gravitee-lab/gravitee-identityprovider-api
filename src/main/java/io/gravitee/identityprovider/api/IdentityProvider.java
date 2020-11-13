@@ -41,14 +41,6 @@ public interface IdentityProvider extends Service<IdentityProvider> {
      */
     <T, U> AuthenticationProvider<T, U> getAuthenticationProvider();
 
-    /**
-     * Get the {@link UserManager} to use for this {@link IdentityProvider}.
-     * Note: not all {@link IdentityProvider}s provide {@link UserManager}, can be <code>null</code>.
-     *
-     * @return the {@link UserManager} or <code>null</code> if no {@link UserManager} can be used for this {@link IdentityProvider}.
-     */
-    UserManager getUserManager();
-
     default IdentityProvider start() throws Exception {
         return this;
     }
@@ -56,4 +48,16 @@ public interface IdentityProvider extends Service<IdentityProvider> {
     default IdentityProvider stop() throws Exception {
         return this;
     }
+
+    /**
+     * Get the {@link UserManager} to use for this {@link IdentityProvider}.
+     * Note: not all {@link IdentityProvider}s provide {@link UserManager}, can be <code>null</code>.
+     *
+     * @return the {@link UserManager} or <code>null</code> if no {@link UserManager} can be used for this {@link IdentityProvider}.
+     */
+    default UserManager getUserManager() {
+        // Cockpit doesn't need a UserManager as it manages users by itself.
+        return null;
+    }
+
 }

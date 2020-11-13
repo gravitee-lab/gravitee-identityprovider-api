@@ -16,6 +16,8 @@
 package io.gravitee.identityprovider.api;
 
 import io.gravitee.common.service.Service;
+import java.util.Collection;
+import java.util.Map;
 
 /**
  * Allows to manage multiple {@link IdentityProvider}s.
@@ -43,6 +45,13 @@ public interface IdentityProviderManager extends Service<IdentityProviderManager
      * @param identityProvider the {@link IdentityProvider}
      */
     void put(String source, IdentityProvider identityProvider);
+
+    /**
+     * Get all available {@link IdentityProvider}
+     *
+     * @return the list of {@link IdentityProvider} available.
+     */
+    Map<String, IdentityProvider> getAll();
 
     default AuthenticationProvider<?, ?> getAuthenticationProvider(String source) {
 
