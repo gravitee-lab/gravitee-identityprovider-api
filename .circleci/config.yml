@@ -49,8 +49,7 @@ workflows:
           # maven_container_image_tag: stable-latest
           secrethub_org: gravitee-lab
           secrethub_repo: cicd
-          # # [maven_profile_id] willeventually be changed to a
-          # # pull requests dedicated one, with its own [settings.xml] behind
+          # # [maven_profile_id] maven profile defined in the dev team dedicated [settings.xml]
           # maven_profile_id: gravitee-dry-run
           maven_profile_id: gio-dev
   mvn_release:
