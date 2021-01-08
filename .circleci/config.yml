@@ -52,6 +52,7 @@ workflows:
           # # [maven_profile_id] willeventually be changed to a
           # # pull requests dedicated one, with its own [settings.xml] behind
           # maven_profile_id: gravitee-dry-run
+          maven_profile_id: gio-dev
   mvn_release:
     when:
       and:
