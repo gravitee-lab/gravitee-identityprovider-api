@@ -47,7 +47,7 @@ workflows:
       - gravitee/pull_request:
           context: cicd-orchestrator
           # maven_container_image_tag: stable-latest
-          secrethub_org: graviteeio
+          secrethub_org: gravitee-lab
           secrethub_repo: cicd
           # maven_profile_id: gravitee-dry-run
   mvn_release:
